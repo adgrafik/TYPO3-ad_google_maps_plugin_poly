@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>CSH</type>
+		<description>CSH labels for FlexForm fields</description>
+		<csh_table>tx_adgooglemaps_pi1</csh_table>
+		<fileId>EXT:ad_google_maps/Resources/Private/Language/locallang_tca_csh_layer.xml</fileId>
+		<labelContext type="array"></labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_adgooglemapspluginpoly_clickable.description">If true, the shape receives mouse and touch events. Default value is true.</label>
+			<label index="tx_adgooglemapspluginpoly_geodesic.description">Render each edge as a geodesic (a segment of a "great circle"). A geodesic is the shortest path between two points along the surface of the Earth.</label>
+			<label index="tx_adgooglemapspluginpoly_zindex.description">The zIndex compared to other shapes.</label>
+			<label index="tx_adgooglemapspluginpoly_add_markers.description">Add markers on polylines and polygons.</label>
+			<label index="tx_adgooglemapspluginpoly_force_listing.description">If "Set markers" is set, the listview shows only the markers. With this option the shape will be shown in the list also.</label>
+			<label index="tx_adgooglemapspluginpoly_stroke_color.description">The stroke color in HTML hex style.</label>
+			<label index="tx_adgooglemapspluginpoly_stroke_opacity.description">The stroke opacity between 0% and 100%.</label>
+			<label index="tx_adgooglemapspluginpoly_stroke_weight.description">The stroke width in pixels.</label>
+			<label index="tx_adgooglemapspluginpoly_fill_color.description">The fill color in HTML hex style.</label>
+			<label index="tx_adgooglemapspluginpoly_fill_opacity.description">The fill opacity between 0% and 100%.</label>
+			<label index="tx_adgooglemapspluginpoly_info_window_placing_type.description">Placing type for the info window.</label>
+			<label index="tx_adgooglemapspluginpoly_info_window_position.description">Position of the info window if type is a polyline or polygon. Klick for details.</label>
+			<label index="tx_adgooglemapspluginpoly_info_window_position.details">There are three options:
+				- Leave empty to place it in the center of the shape.
+				- Set the number of the shape point (beginning with "1")
+				- Set a coordinate like "48.475742,16.438696"</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_adgooglemapspluginpoly_clickable.description">Falls wahr, empfängt das Objekt Maus- und Berührungsereignisse. Der Standardwert ist "true"..</label>
+			<label index="tx_adgooglemapspluginpoly_geodesic.description">Hiermit wird jede Ecke als Geodäte (Segment eines "Großkreises") wiedergegeben. Eine Geodäte ist der kürzeste Pfad zwischen zwei Punkten auf der Oberfläche der Erde.</label>
+			<label index="tx_adgooglemapspluginpoly_zindex.description">Der zIndex im Vergleich zu anderen Polys.</label>
+			<label index="tx_adgooglemapspluginpoly_add_markers.description">Fügt Markierungen zu Polylinien und Polygone hinzu.</label>
+			<label index="tx_adgooglemapspluginpoly_force_listing.description">Wenn "Markierungen hinzufügen" gesetzt ist, zeigt die Listendarstellung nur Markierungen an. Mit dieser Option wird auch für die Form ein Eintrag erstellt.</label>
+			<label index="tx_adgooglemapspluginpoly_stroke_color.description">Die Farbe der Linie als HTML-Hexadezimalwert, zum Beispiel "#FFAA00".</label>
+			<label index="tx_adgooglemapspluginpoly_stroke_opacity.description">Die Deckkraft der Linie zwischen 0% und 100%.</label>
+			<label index="tx_adgooglemapspluginpoly_stroke_weight.description">Die Linienstärke in Pixeln.</label>
+			<label index="tx_adgooglemapspluginpoly_fill_color.description">Die Füllfarbe als HTML-Hexadezimalwert, zum Beispiel "#00AAFF".</label>
+			<label index="tx_adgooglemapspluginpoly_fill_opacity.description">Die Deckkraft der Füllung zwischen 0% und 100%.</label>
+			<label index="tx_adgooglemapspluginpoly_info_window_placing_type.description">Wenn Markierungen auf Formen (Polygone oder Polylinien) gesetzt bestimmt diese Option das Verhalten der Plazierung.</label>
+			<label index="tx_adgooglemapspluginpoly_info_window_position.description">Position des Infofenster bei Polygone oder Polylinien. Klicke für Details.</label>
+			<label index="tx_adgooglemapspluginpoly_info_window_position.details">Es gibt drei Werttypen:
+				- Wird kein Wert angegeben, erscheint das Infofenster wo geklickt wurde.
+				- Setze die Nummer eines Formpunktes (beginnend mit "1")
+				- Setze eine Koordinate, z.B. "48.475742,16.438696"</label>
+		</languageKey>
+	</data>
+</T3locallang>
