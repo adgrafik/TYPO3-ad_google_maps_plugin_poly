@@ -28,7 +28,7 @@
  * @copyright Copyright belongs to the respective authors
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License, version 2
  */
-Tx_AdGoogleMapsApi_Plugin.prototype.drawPolyline = function(layerIndex){
+Tx_AdGoogleMaps_Plugin.prototype.drawPolyline = function(layerIndex){
 	var _this = this;
 	var layerOptions = this.getLayerOptions(layerIndex);
 	var layerUid = layerOptions.uid;
@@ -47,7 +47,7 @@ Tx_AdGoogleMapsApi_Plugin.prototype.drawPolyline = function(layerIndex){
 	return layerUid;
 };
 
-Tx_AdGoogleMapsApi_Plugin.prototype.drawPolygon = function(layerIndex){
+Tx_AdGoogleMaps_Plugin.prototype.drawPolygon = function(layerIndex){
 	var _this = this;
 	var layerOptions = this.getLayerOptions(layerIndex);
 	var layerUid = layerOptions.uid;

@@ -42,224 +42,202 @@ class Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline extends Tx_AdGoogleM
 	const INFO_WINDOW_PLACING_TYPE_SHAPE = 2;
 
 	/**
-	 * @var boolean
+	 * Placing type of list entries.
 	 */
-	protected $clickable;
+	const LIST_TYPE_MARKERS = 1;
+	const LIST_TYPE_SHAPE = 2;
 
 	/**
 	 * @var boolean
 	 */
-	protected $geodesic;
+	protected $pluginPolyClickable;
+
+	/**
+	 * @var boolean
+	 */
+	protected $pluginPolyGeodesic;
 
 	/**
 	 * @var integer
 	 */
-	protected $zindex;
+	protected $pluginPolyZindex;
 
 	/**
 	 * @var boolean
 	 */
-	protected $addMarkers;
-
-	/**
-	 * @var boolean
-	 */
-	protected $forceListing;
+	protected $pluginPolyAddMarkers;
 
 	/**
 	 * @var string
 	 */
-	protected $strokeColor;
+	protected $pluginPolyStrokeColor;
 
 	/**
 	 * @var integer
 	 */
-	protected $strokeOpacity;
+	protected $pluginPolyStrokeOpacity;
 
 	/**
 	 * @var integer
 	 */
-	protected $strokeWeight;
+	protected $pluginPolyStrokeWeight;
 
 	/**
 	 * @var integer
 	 */
-	protected $infoWindowPlacingType;
+	protected $pluginPolyInfoWindowPlacingType;
 
 	/**
 	 * @var string
 	 */
-	protected $infoWindowPosition;
+	protected $pluginPolyInfoWindowPosition;
 
 	/**
-	 * Sets this clickable
+	 * @var integer
+	 */
+	protected $pluginPolyListType;
+
+	/**
+	 * Sets this pluginPolyClickable
 	 *
-	 * @param boolean $clickable
+	 * @param boolean $pluginPolyClickable
 	 * @return void
 	 */
-	public function setClickable($clickable) {
-		$this->clickable = (boolean) $clickable;
+	public function setPluginPolyClickable($pluginPolyClickable) {
+		$this->pluginPolyClickable = (boolean) $pluginPolyClickable;
 	}
 
 	/**
-	 * Returns this clickable
+	 * Returns this pluginPolyClickable
 	 *
 	 * @return boolean
 	 */
-	public function isClickable() {
-		return (boolean) $this->clickable;
+	public function isPluginPolyClickable() {
+		return (boolean) $this->getPropertyValue('pluginPolyClickable', 'layer');
 	}
 
 	/**
-	 * Sets this geodesic
+	 * Sets this pluginPolyGeodesic
 	 *
-	 * @param boolean $geodesic
+	 * @param boolean $pluginPolyGeodesic
 	 * @return void
 	 */
-	public function setGeodesic($geodesic) {
-		$this->geodesic = (boolean) $geodesic;
+	public function setPluginPolyGeodesic($pluginPolyGeodesic) {
+		$this->pluginPolyGeodesic = (boolean) $pluginPolyGeodesic;
 	}
 
 	/**
-	 * Returns this geodesic
+	 * Returns this pluginPolyGeodesic
 	 *
 	 * @return boolean
 	 */
-	public function isGeodesic() {
-		return (boolean) $this->geodesic;
+	public function isPluginPolyGeodesic() {
+		return (boolean) $this->getPropertyValue('pluginPolyGeodesic', 'layer');
 	}
 
 	/**
-	 * Sets this zindex
+	 * Sets this pluginPolyZindex
 	 *
-	 * @param integer $zindex
+	 * @param integer $pluginPolyZindex
 	 * @return void
 	 */
-	public function setZindex($zindex) {
-		$this->zindex = $zindex;
+	public function setPluginPolyZindex($pluginPolyZindex) {
+		$this->pluginPolyZindex = $pluginPolyZindex;
 	}
 
 	/**
-	 * Returns this zindex
+	 * Returns this pluginPolyZindex
 	 *
 	 * @return integer
 	 */
-	public function getZindex() {
-		return (integer) $this->zindex;
+	public function getPluginPolyZindex() {
+		return (integer) $this->getPropertyValue('pluginPolyZindex', 'layer');
 	}
 
 	/**
-	 * Sets this addMarkers
+	 * Sets this pluginPolyAddMarkers
 	 *
-	 * @param boolean $addMarkers
+	 * @param boolean $pluginPolyAddMarkers
 	 * @return void
 	 */
-	public function setAddMarkers($addMarkers) {
-		$this->addMarkers = (boolean) $addMarkers;
+	public function setPluginPolyAddMarkers($pluginPolyAddMarkers) {
+		$this->pluginPolyAddMarkers = (boolean) $pluginPolyAddMarkers;
 	}
 
 	/**
-	 * Returns this addMarkers
+	 * Returns this pluginPolyAddMarkers
 	 *
 	 * @return boolean
 	 */
-	public function isAddMarkers() {
-		return (boolean) $this->addMarkers;
+	public function isPluginPolyAddMarkers() {
+		return (boolean) $this->getPropertyValue('pluginPolyAddMarkers', 'layer');
 	}
 
 	/**
-	 * Returns this addMarkers
+	 * Sets this pluginPolyStrokeColor
 	 *
-	 * @return boolean
-	 */
-	public function getAddMarkers() {
-		return (boolean) $this->addMarkers;
-	}
-
-	/**
-	 * Sets this forceListing
-	 *
-	 * @param boolean $forceListing
+	 * @param string $pluginPolyStrokeColor
 	 * @return void
 	 */
-	public function setForceListing($forceListing) {
-		$this->forceListing = (boolean) $forceListing;
+	public function setPluginPolyStrokeColor($pluginPolyStrokeColor) {
+		$this->pluginPolyStrokeColor = $pluginPolyStrokeColor;
 	}
 
 	/**
-	 * Returns this forceListing
-	 *
-	 * @return boolean
-	 */
-	public function isForceListing() {
-		return (boolean) ($this->isAddMarkers() === FALSE || ($this->isAddMarkers() === TRUE && (boolean) $this->forceListing === TRUE));
-	}
-
-	/**
-	 * Sets this strokeColor
-	 *
-	 * @param string $strokeColor
-	 * @return void
-	 */
-	public function setStrokeColor($strokeColor) {
-		$this->strokeColor = $strokeColor;
-	}
-
-	/**
-	 * Returns this strokeColor
+	 * Returns this pluginPolyStrokeColor
 	 *
 	 * @return string
 	 */
-	public function getStrokeColor() {
-		return $this->strokeColor;
+	public function getPluginPolyStrokeColor() {
+		return $this->getPropertyValue('pluginPolyStrokeColor', 'layer');
 	}
 
 	/**
-	 * Sets this strokeOpacity
+	 * Sets this pluginPolyStrokeOpacity
 	 *
-	 * @param integer $strokeOpacity
+	 * @param integer $pluginPolyStrokeOpacity
 	 * @return void
 	 */
-	public function setStrokeOpacity($strokeOpacity) {
-		$this->strokeOpacity = $strokeOpacity;
+	public function setPluginPolyStrokeOpacity($pluginPolyStrokeOpacity) {
+		$this->pluginPolyStrokeOpacity = $pluginPolyStrokeOpacity;
 	}
 
 	/**
-	 * Returns this strokeOpacity
+	 * Returns this pluginPolyStrokeOpacity
 	 *
 	 * @return integer
 	 */
-	public function getStrokeOpacity() {
-		return (integer) $this->strokeOpacity;
+	public function getPluginPolyStrokeOpacity() {
+		return (integer) $this->getPropertyValue('pluginPolyStrokeOpacity', 'layer');
 	}
 
 	/**
-	 * Sets this strokeWeight
+	 * Sets this pluginPolyStrokeWeight
 	 *
-	 * @param integer $strokeWeight
+	 * @param integer $pluginPolyStrokeWeight
 	 * @return void
 	 */
-	public function setStrokeWeight($strokeWeight) {
-		$this->strokeWeight = $strokeWeight;
+	public function setPluginPolyStrokeWeight($pluginPolyStrokeWeight) {
+		$this->pluginPolyStrokeWeight = $pluginPolyStrokeWeight;
 	}
 
 	/**
-	 * Returns this strokeWeight
+	 * Returns this pluginPolyStrokeWeight
 	 *
 	 * @return integer
 	 */
-	public function getStrokeWeight() {
-		return (integer) $this->strokeWeight;
+	public function getPluginPolyStrokeWeight() {
+		return (integer) $this->getPropertyValue('pluginPolyStrokeWeight', 'layer');
 	}
 
 	/**
-	 * Sets this infoWindowPlacingType
+	 * Sets this pluginPolyInfoWindowPlacingType
 	 *
-	 * @param integer $infoWindowPlacingType
+	 * @param integer $pluginPolyInfoWindowPlacingType
 	 * @return void
 	 */
-	public function setInfoWindowPlacingType($infoWindowPlacingType) {
-		$this->infoWindowPlacingType = (integer) $infoWindowPlacingType;
+	public function setPluginPolyInfoWindowPlacingType($pluginPolyInfoWindowPlacingType) {
+		$this->pluginPolyInfoWindowPlacingType = (integer) $pluginPolyInfoWindowPlacingType;
 	}
 
 	/**
@@ -267,27 +245,46 @@ class Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline extends Tx_AdGoogleM
 	 *
 	 * @return integer
 	 */
-	public function getInfoWindowPlacingType() {
-		return (integer) $this->infoWindowPlacingType;
+	public function getPluginPolyInfoWindowPlacingType() {
+		return (integer) $this->getPropertyValue('pluginPolyInfoWindowPlacingType', 'layer');
 	}
 
 	/**
-	 * Sets this infoWindowPosition
+	 * Sets this pluginPolyInfoWindowPosition
 	 *
-	 * @param string $infoWindowPosition
+	 * @param string $pluginPolyInfoWindowPosition
 	 * @return void
 	 */
-	public function setInfoWindowPosition($infoWindowPosition) {
-		$this->infoWindowPosition = $infoWindowPosition;
+	public function setPluginPolyInfoWindowPosition($pluginPolyInfoWindowPosition) {
+		$this->pluginPolyInfoWindowPosition = $pluginPolyInfoWindowPosition;
 	}
 
 	/**
-	 * Returns this infoWindowPosition
+	 * Returns this pluginPolyInfoWindowPosition
 	 *
 	 * @return string
 	 */
-	public function getInfoWindowPosition() {
-		return $this->infoWindowPosition;
+	public function getPluginPolyInfoWindowPosition() {
+		return $this->getPropertyValue('pluginPolyInfoWindowPosition', 'layer');
+	}
+
+	/**
+	 * Sets this pluginPolyListType
+	 *
+	 * @param integer $pluginPolyListType
+	 * @return void
+	 */
+	public function setPluginPolyListType($pluginPolyListType) {
+		$this->pluginPolyListType = (integer) $pluginPolyListType;
+	}
+
+	/**
+	 * Returns this pluginPolyListType
+	 *
+	 * @return integer
+	 */
+	public function getPluginPolyListType() {
+		return (integer) $this->getPropertyValue('pluginPolyListType', 'layer');
 	}
 
 }

@@ -38,49 +38,49 @@ class Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon extends Tx_AdGoogleMa
 	/**
 	 * @var string
 	 */
-	protected $fillColor;
+	protected $pluginPolyFillColor;
 
 	/**
 	 * @var integer
 	 */
-	protected $fillOpacity;
+	protected $pluginPolyFillOpacity;
 
 	/**
-	 * Sets this fillColor
+	 * Sets this pluginPolyFillColor
 	 *
-	 * @param string $fillColor
+	 * @param string $pluginPolyFillColor
 	 * @return void
 	 */
-	public function setFillColor($fillColor) {
-		$this->fillColor = $fillColor;
+	public function setPluginPolyFillColor($pluginPolyFillColor) {
+		$this->pluginPolyFillColor = $pluginPolyFillColor;
 	}
 
 	/**
-	 * Returns this fillColor
+	 * Returns this pluginPolyFillColor
 	 *
 	 * @return string
 	 */
-	public function getFillColor() {
-		return $this->fillColor;
+	public function getPluginPolyFillColor() {
+		return $this->getPropertyValue('pluginPolyFillColor', 'layer');
 	}
 
 	/**
-	 * Sets this fillOpacity
+	 * Sets this pluginPolyFillOpacity
 	 *
-	 * @param integer $fillOpacity
+	 * @param integer $pluginPolyFillOpacity
 	 * @return void
 	 */
-	public function setFillOpacity($fillOpacity) {
-		$this->fillOpacity = $fillOpacity;
+	public function setPluginPolyFillOpacity($pluginPolyFillOpacity) {
+		$this->pluginPolyFillOpacity = $pluginPolyFillOpacity;
 	}
 
 	/**
-	 * Returns this fillOpacity
+	 * Returns this pluginPolyFillOpacity
 	 *
 	 * @return integer
 	 */
-	public function getFillOpacity() {
-		return (integer) $this->fillOpacity;
+	public function getPluginPolyFillOpacity() {
+		return (integer) $this->getPropertyValue('pluginPolyFillOpacity', 'layer');
 	}
 
 }

@@ -28,7 +28,7 @@
  * @scope prototype
  * @api
  */
-class Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polyline extends Tx_AdGoogleMapsApi_Plugin_Options_Layer_AbstractLayer {
+class Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polyline extends Tx_AdGoogleMaps_Plugin_Options_Layer_AbstractLayer {
 
 }
 

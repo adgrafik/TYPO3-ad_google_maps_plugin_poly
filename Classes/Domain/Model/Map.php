@@ -38,49 +38,49 @@ class Tx_AdGoogleMapsPluginPoly_Domain_Model_Map extends Tx_AdGoogleMaps_Domain_
 	/**
 	 * @var integer
 	 */
-	protected $infoWindowPlacingType;
+	protected $pluginPolyInfoWindowPlacingType;
 
 	/**
 	 * @var string
 	 */
-	protected $infoWindowPosition;
+	protected $pluginPolyInfoWindowPosition;
 
 	/**
-	 * Sets this infoWindowPlacingType
+	 * Sets this pluginPolyInfoWindowPlacingType
 	 *
-	 * @param integer $infoWindowPlacingType
+	 * @param integer $pluginPolyInfoWindowPlacingType
 	 * @return void
 	 */
-	public function setInfoWindowPlacingType($infoWindowPlacingType) {
-		$this->infoWindowPlacingType = (integer) $infoWindowPlacingType;
+	public function setPluginPolyInfoWindowPlacingType($pluginPolyInfoWindowPlacingType) {
+		$this->pluginPolyInfoWindowPlacingType = (integer) $pluginPolyInfoWindowPlacingType;
 	}
 
 	/**
-	 * Returns this infoWindowPlacingType
+	 * Returns this pluginPolyInfoWindowPlacingType
 	 *
 	 * @return integer
 	 */
-	public function getInfoWindowPlacingType() {
-		return (integer) $this->infoWindowPlacingType;
+	public function getPluginPolyInfoWindowPlacingType() {
+		return (integer) $this->getPropertyValue('pluginPolyInfoWindowPlacingType');
 	}
 
 	/**
-	 * Sets this infoWindowPosition
+	 * Sets this pluginPolyInfoWindowPosition
 	 *
-	 * @param string $infoWindowPosition
+	 * @param string $pluginPolyInfoWindowPosition
 	 * @return void
 	 */
-	public function setInfoWindowPosition($infoWindowPosition) {
-		$this->infoWindowPosition = $infoWindowPosition;
+	public function setPluginPolyInfoWindowPosition($pluginPolyInfoWindowPosition) {
+		$this->pluginPolyInfoWindowPosition = $pluginPolyInfoWindowPosition;
 	}
 
 	/**
-	 * Returns this infoWindowPosition
+	 * Returns this pluginPolyInfoWindowPosition
 	 *
 	 * @return string
 	 */
-	public function getInfoWindowPosition() {
-		return $this->infoWindowPosition;
+	public function getPluginPolyInfoWindowPosition() {
+		return $this->getPropertyValue('pluginPolyInfoWindowPosition');
 	}
 
 }

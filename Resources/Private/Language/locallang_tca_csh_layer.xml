@@ -13,7 +13,6 @@
 			<label index="tx_adgooglemapspluginpoly_geodesic.description">Render each edge as a geodesic (a segment of a "great circle"). A geodesic is the shortest path between two points along the surface of the Earth.</label>
 			<label index="tx_adgooglemapspluginpoly_zindex.description">The zIndex compared to other shapes.</label>
 			<label index="tx_adgooglemapspluginpoly_add_markers.description">Add markers on polylines and polygons.</label>
-			<label index="tx_adgooglemapspluginpoly_force_listing.description">If "Set markers" is set, the listview shows only the markers. With this option the shape will be shown in the list also.</label>
 			<label index="tx_adgooglemapspluginpoly_stroke_color.description">The stroke color in HTML hex style.</label>
 			<label index="tx_adgooglemapspluginpoly_stroke_opacity.description">The stroke opacity between 0% and 100%.</label>
 			<label index="tx_adgooglemapspluginpoly_stroke_weight.description">The stroke width in pixels.</label>
@@ -25,13 +24,13 @@
 				- Leave empty to place it in the center of the shape.
 				- Set the number of the shape point (beginning with "1")
 				- Set a coordinate like "48.475742,16.438696"</label>
+			<label index="tx_adgooglemapspluginpoly_list_type.description">Defines the view of the list.</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_adgooglemapspluginpoly_clickable.description">Falls wahr, empfängt das Objekt Maus- und Berührungsereignisse. Der Standardwert ist "true"..</label>
 			<label index="tx_adgooglemapspluginpoly_geodesic.description">Hiermit wird jede Ecke als Geodäte (Segment eines "Großkreises") wiedergegeben. Eine Geodäte ist der kürzeste Pfad zwischen zwei Punkten auf der Oberfläche der Erde.</label>
 			<label index="tx_adgooglemapspluginpoly_zindex.description">Der zIndex im Vergleich zu anderen Polys.</label>
 			<label index="tx_adgooglemapspluginpoly_add_markers.description">Fügt Markierungen zu Polylinien und Polygone hinzu.</label>
-			<label index="tx_adgooglemapspluginpoly_force_listing.description">Wenn "Markierungen hinzufügen" gesetzt ist, zeigt die Listendarstellung nur Markierungen an. Mit dieser Option wird auch für die Form ein Eintrag erstellt.</label>
 			<label index="tx_adgooglemapspluginpoly_stroke_color.description">Die Farbe der Linie als HTML-Hexadezimalwert, zum Beispiel "#FFAA00".</label>
 			<label index="tx_adgooglemapspluginpoly_stroke_opacity.description">Die Deckkraft der Linie zwischen 0% und 100%.</label>
 			<label index="tx_adgooglemapspluginpoly_stroke_weight.description">Die Linienstärke in Pixeln.</label>
@@ -43,6 +42,7 @@
 				- Wird kein Wert angegeben, erscheint das Infofenster wo geklickt wurde.
 				- Setze die Nummer eines Formpunktes (beginnend mit "1")
 				- Setze eine Koordinate, z.B. "48.475742,16.438696"</label>
+			<label index="tx_adgooglemapspluginpoly_list_type.description">Definiert die Darstellung der Liste.</label>
 		</languageKey>
 	</data>
 </T3locallang>
