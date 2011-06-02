@@ -22,5 +22,5 @@ CREATE TABLE tx_adgooglemaps_domain_model_layer (
 	tx_adgooglemapspluginpoly_fill_opacity tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	tx_adgooglemapspluginpoly_info_window_placing_type tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	tx_adgooglemapspluginpoly_info_window_position varchar(64) DEFAULT '' NOT NULL
-	tx_adgooglemapspluginpoly_list_type tinyint(4) unsigned DEFAULT '0' NOT NULL,
+	tx_adgooglemapspluginpoly_list_type tinyint(4) unsigned DEFAULT '0' NOT NULL
 );

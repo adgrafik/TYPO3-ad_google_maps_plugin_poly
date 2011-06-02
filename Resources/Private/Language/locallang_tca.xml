@@ -17,10 +17,12 @@
 			<label index="tx_adgooglemaps_domain_model_layer.type.polygon">Polygon</label>
 
 			<label index="tx_adgooglemaps_domain_model_layer.sheetAppearance">Appearance</label>
+			<label index="tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyStroke">Line options</label>
 			<label index="tx_adgooglemaps_domain_model_layer.colorPickerTitle">Color Picker:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.strokeColor">Stroke color:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.strokeOpacity">Stroke opacity:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.strokeWeight">Stroke weight:</label>
+			<label index="tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyFill">Fill options</label>
 			<label index="tx_adgooglemaps_domain_model_layer.fillColor">Fill color:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.fillOpacity">Fill opacity:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.paletteTitle.polyProperties">Properties</label>
@@ -54,10 +56,12 @@
 			<label index="tx_adgooglemaps_domain_model_layer.type.polygon">Polygon</label>
 
 			<label index="tx_adgooglemaps_domain_model_layer.sheetAppearance">Erscheinungsbild</label>
+			<label index="tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyStroke">Linienoptionen</label>
 			<label index="tx_adgooglemaps_domain_model_layer.colorPickerTitle">Farbwähler:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.strokeColor">Linienfarbe:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.strokeOpacity">Linienopazität:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.strokeWeight">Linienstärke:</label>
+			<label index="tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyFill">Fülloptionen</label>
 			<label index="tx_adgooglemaps_domain_model_layer.fillColor">Füllfarbe:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.fillOpacity">Füllopazität:</label>
 			<label index="tx_adgooglemaps_domain_model_layer.paletteTitle.polyProperties">Eigenschaften</label>

@@ -1,3 +1,6 @@
 2011-02-19 Arno Dudek  <webmaster@adgrafik.at>
 
 1.0.0	First release. Moved from ad_google_maps
+
+1.0.1	[TASK] Changed getBoundsOfLatLngArray to getBoundsByLatLngArray and getCenterOfLatLngArray to getCenterByLatLngArray.
+		[TASK] Added all items of a category to categoryItemKeys in MapBuilder Layers like info windows.

@@ -261,7 +261,7 @@ t3lib_extMgm::addToAllTCAtypes(
 t3lib_extMgm::addToAllTCAtypes(
 	'tx_adgooglemaps_domain_model_layer',
 	'--div--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.sheetAppearance, 
-		--palette--;;pluginPolyStroke,
+		--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyStroke;pluginPolyStroke,
 		--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.polyProperties;pluginPolyProperties', 
 	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
 	'after:categories'
@@ -284,7 +284,7 @@ t3lib_extMgm::addToAllTCAtypes(
 // Add fields only for polygons.
 t3lib_extMgm::addToAllTCAtypes(
 	'tx_adgooglemaps_domain_model_layer',
-	'--palette--;;pluginPolyFill',
+	'--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyFill;pluginPolyFill',
 	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
 	'after:--palette--;;pluginPolyStroke'
 );

@@ -39,8 +39,8 @@ Tx_AdGoogleMaps_Plugin.prototype.drawPolyline = function(layerIndex){
 		this.setLayer(layerUid, {
 			options: layerOptions,
 			layer: layer,
-			bounds: this.getBoundsOfLatLngArray(layer.getPath()),
-			center: this.getCenterOfLatLngArray(layer.getPath())
+			bounds: this.getBoundsByLatLngArray(layer.getPath()),
+			center: this.getCenterByLatLngArray(layer.getPath())
 		});
 	}
 	// Must return the layerUid.
@@ -58,8 +58,8 @@ Tx_AdGoogleMaps_Plugin.prototype.drawPolygon = function(layerIndex){
 		this.setLayer(layerUid, {
 			options: layerOptions,
 			layer: layer,
-			bounds: this.getBoundsOfLatLngArray(layer.getPath()),
-			center: this.getCenterOfLatLngArray(layer.getPath())
+			bounds: this.getBoundsByLatLngArray(layer.getPath()),
+			center: this.getCenterByLatLngArray(layer.getPath())
 		});
 	}
 	// Must return the layerUid.

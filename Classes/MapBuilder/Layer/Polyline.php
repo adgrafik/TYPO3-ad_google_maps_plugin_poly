@@ -261,7 +261,8 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 			$this->layer->addItem($item);
 		}
 
-		$this->categoryItemKeys[] = $layerUid;
+		$this->addCategoryItemKey($layerUid);
+		$this->addCategoryItemKey($this->markers->getCategoryItemKeys());
 
 		return $layer;
 	}

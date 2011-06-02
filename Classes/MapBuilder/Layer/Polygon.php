@@ -104,6 +104,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMaps
 			$infoWindowOptionsObject = $this->infoWindows->buildItem($indexInfoWindow, $infoWindowCoordinates);
 			if ($infoWindowOptionsObject !== NULL) {
 				$infoWindowOptionsObject->setLinkToLayerUid($layerUid);
+				$this->addCategoryItemKey($this->infoWindows->getCategoryItemKeys());
 			}
 		}
 
@@ -130,7 +131,8 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMaps
 			$this->layer->addItem($item);
 		}
 
-		$this->categoryItemKeys[] = $layerUid;
+		$this->addCategoryItemKey($layerUid);
+		$this->addCategoryItemKey($this->markers->getCategoryItemKeys());
 
 		return $layer;
 	}
