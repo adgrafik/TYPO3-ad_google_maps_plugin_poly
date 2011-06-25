@@ -56,7 +56,7 @@ class Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon extends Tx_AdGoogleMaps
 	 *
 	 * @param integer $index
 	 * @param string $coordinates
-	 * @return Tx_AdGoogleMaps_Plugin_Options_Layer_LayerInterface
+	 * @return Tx_AdGoogleMaps_MapBuilder_Options_Layer_LayerInterface
 	 */
 	public function buildItem($index, $coordinates) {
 		$countCoordinates = count($this->coordinatesProvider->getCoordinates());
@@ -79,10 +79,10 @@ class Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon extends Tx_AdGoogleMaps
 		$this->layerOptions['paths'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
 
 		// Create shape.
-		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Api_Layer_Polygon', $this->layerOptions);
+		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_MapBuilder_Api_Layer_Polygon', $this->layerOptions);
 
 		// Create option object.
-		$layerOptionsObject = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polygon');
+		$layerOptionsObject = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_MapBuilder_Options_Layer_Polygon');
 		$layerOptionsObject->setUid($layerUid);
 		$layerOptionsObject->setDrawFunctionName('drawPolygon');
 		$layerOptionsObject->setOptions($layer);

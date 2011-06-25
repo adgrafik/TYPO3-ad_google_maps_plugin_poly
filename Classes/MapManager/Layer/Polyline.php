@@ -185,7 +185,7 @@ class Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline extends Tx_AdGoogleMap
 	 *
 	 * @param integer $index
 	 * @param string $coordinates
-	 * @return Tx_AdGoogleMaps_Plugin_Options_Layer_LayerInterface
+	 * @return Tx_AdGoogleMaps_MapBuilder_Options_Layer_LayerInterface
 	 */
 	public function buildItem($index, $coordinates) {
 		$countCoordinates = count($this->coordinatesProvider->getCoordinates());
@@ -208,10 +208,10 @@ class Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline extends Tx_AdGoogleMap
 		$this->layerOptions['path'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
 
 		// Create shape.
-		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline', $this->layerOptions);
+		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_MapBuilder_Api_Layer_Polyline', $this->layerOptions);
 
 		// Create option object.
-		$layerOptionsObject = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polyline');
+		$layerOptionsObject = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_MapBuilder_Options_Layer_Polyline');
 		$layerOptionsObject->setUid($layerUid);
 		$layerOptionsObject->setDrawFunctionName('drawPolyline');
 		$layerOptionsObject->setOptions($layer);
