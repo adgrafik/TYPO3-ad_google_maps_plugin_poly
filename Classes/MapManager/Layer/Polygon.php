@@ -28,7 +28,7 @@
  * @version $Id:$
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License, version 2
  */
-class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline {
+class Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon extends Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline {
 
 	/**
 	 * Constructor.
@@ -45,7 +45,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMaps
 	public function buildItemPreProcessing() {
 		parent::buildItemPreProcessing();
 
-		Tx_AdGoogleMaps_Utility_FrontEnd::includeFrontEndResources('Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon');
+		Tx_AdGoogleMaps_Utility_FrontEnd::includeFrontEndResources('Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon');
 
 		$this->layerOptions['fillColor'] = $this->layer->getPluginPolyFillColor();
 		$this->layerOptions['fillOpacity'] = $this->layer->getPluginPolyFillOpacity() / 100;
@@ -76,7 +76,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMaps
 		$itemData = $this->getContentByObjectNumberConf($this->coordinatesProvider->getData(), $this->infoWindowObjectNumberConf, $indexInfoWindow, NULL, FALSE, array());
 
 		// Set options.
-		$this->layerOptions['paths'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
+		$this->layerOptions['paths'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
 
 		// Create shape.
 		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Api_Layer_Polygon', $this->layerOptions);

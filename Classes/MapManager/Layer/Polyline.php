@@ -28,7 +28,7 @@
  * @version $Id:$
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License, version 2
  */
-class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMaps_MapBuilder_Layer_AbstractLayer {
+class Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline extends Tx_AdGoogleMaps_MapManager_Layer_AbstractLayer {
 
 	/**
 	 * @var array
@@ -41,7 +41,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 	protected $addMarkers;
 
 	/**
-	 * @var Tx_AdGoogleMaps_MapBuilder_Layer_Marker
+	 * @var Tx_AdGoogleMaps_MapManager_Layer_Marker
 	 */
 	protected $markers;
 
@@ -56,7 +56,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 	protected $infoWindowPosition;
 
 	/**
-	 * @var Tx_AdGoogleMaps_MapBuilder_Layer_InfoWindow
+	 * @var Tx_AdGoogleMaps_MapManager_Layer_InfoWindow
 	 */
 	protected $infoWindows;
 
@@ -95,7 +95,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 	 * @return void
 	 */
 	public function buildItemPreProcessing() {
-		Tx_AdGoogleMaps_Utility_FrontEnd::includeFrontEndResources('Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline');
+		Tx_AdGoogleMaps_Utility_FrontEnd::includeFrontEndResources('Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline');
 
 		// Get list titles.
 		$this->listType = $this->layer->getPluginPolyListType();
@@ -131,9 +131,9 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 
 		// Build markers.
 		if ($this->addMarkers === TRUE) {
-			$this->markers = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Layer_Marker');
+			$this->markers = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapManager_Layer_Marker');
 			$this->markers->injectSettings($this->settings);
-			$this->markers->injectMapBuilder($this->mapBuilder);
+			$this->markers->injectMapManager($this->mapManager);
 			$this->markers->injectGoogleMapsPlugin($this->googleMapsPlugin);
 			$this->markers->injectMap($this->map);
 			$this->markers->injectCategory($this->category);
@@ -163,9 +163,9 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 		}
 
 		// Build info window.
-		$this->infoWindows = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Layer_InfoWindow');
+		$this->infoWindows = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapManager_Layer_InfoWindow');
 		$this->infoWindows->injectSettings($this->settings);
-		$this->infoWindows->injectMapBuilder($this->mapBuilder);
+		$this->infoWindows->injectMapManager($this->mapManager);
 		$this->infoWindows->injectGoogleMapsPlugin($this->googleMapsPlugin);
 		$this->infoWindows->injectMap($this->map);
 		$this->infoWindows->injectCategory($this->category);
@@ -205,7 +205,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 		$itemData = $this->getContentByObjectNumberConf($this->coordinatesProvider->getData(), $this->infoWindowObjectNumberConf, $indexInfoWindow, NULL, FALSE, array());
 
 		// Set options.
-		$this->layerOptions['path'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
+		$this->layerOptions['path'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
 
 		// Create shape.
 		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline', $this->layerOptions);

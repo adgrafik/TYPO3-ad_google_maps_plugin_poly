@@ -27,15 +27,15 @@ config.tx_extbase {
 			# Set type extensions.
 			Tx_AdGoogleMaps_Domain_Model_Layer {
 				subclasses {
-					Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline = Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline
-					Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon = Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon
+					Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline = Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline
+					Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon = Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon
 				}
 			}
 
 			Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline {
 				mapping {
 					tableName = tx_adgooglemaps_domain_model_layer
-					recordType = Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline
+					recordType = Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline
 					columns {
 						tx_adgooglemapspluginpoly_add_markers.mapOnProperty = pluginPolyAddMarkers
 						tx_adgooglemapspluginpoly_clickable.mapOnProperty = pluginPolyClickable
@@ -55,7 +55,7 @@ config.tx_extbase {
 			Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon {
 				mapping {
 					tableName = tx_adgooglemaps_domain_model_layer
-					recordType = Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon
+					recordType = Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon
 					columns {
 						tx_adgooglemapspluginpoly_fill_color.mapOnProperty = pluginPolyFillColor
 						tx_adgooglemapspluginpoly_fill_opacity.mapOnProperty = pluginPolyFillOpacity
@@ -78,13 +78,13 @@ plugin.tx_adgooglemaps {
 			includeFrontEndResources {
 
 				# Use classname where they loaded as unique configuration key.
-				Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline {
+				Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline {
 					includeJS {
 						Tx_AdGoogleMapsPluginPoly_Plugin_Polyline = EXT:ad_google_maps_plugin_poly/Resources/Public/JavaScript/Plugin/Tx_AdGoogleMapsPluginPoly_Plugin.js
 					}
 				}
 
-				Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline
+				Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline
 			}
 		}
 
@@ -92,8 +92,8 @@ plugin.tx_adgooglemaps {
 			tables {
 				tx_adgooglemaps_domain_model_layer {
 					recordTypes {
-						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline < .Tx_AdGoogleMaps_MapBuilder_Layer_Marker
-						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline {
+						Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline < .Tx_AdGoogleMaps_MapManager_Layer_Marker
+						Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline {
 							javaScriptFiles.1 = EXT:ad_google_maps/Resources/Public/JavaScript/MapDrawer/Tx_AdGoogleMaps_MapDrawer_Layer_Marker.js
 							javaScriptFiles.2 = EXT:ad_google_maps_plugin_poly/Resources/Public/JavaScript/MapDrawer/Tx_AdGoogleMapsPluginPoly_MapDrawer_Layer_Poly.js
 							className = Tx_AdGoogleMapsPluginPoly_MapDrawer_Layer_Polyline
@@ -105,8 +105,8 @@ plugin.tx_adgooglemaps {
 							}
 						}
 
-						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline
-						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon {
+						Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline
+						Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon {
 							className = Tx_AdGoogleMapsPluginPoly_MapDrawer_Layer_Polygon
 							columnsMapping {
 								fillColor = tx_adgooglemapspluginpoly_fill_color

@@ -32,60 +32,60 @@
  * @scope prototype
  * @api
  */
-class Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline extends Tx_AdGoogleMaps_Api_Layer_AbstractLayer {
+class Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline extends Tx_AdGoogleMaps_MapBuilder_Api_Layer_AbstractLayer {
 
 	/**
-	 * @var Tx_AdGoogleMaps_Api_Map
-	 * @javaScriptHelper dontSetValue = TRUE
+	 * @var Tx_AdGoogleMaps_MapBuilder_Api_Map
+	 * @jsonClassEncoder ignoreProperty
 	 */
 	protected $map;
 
 	/**
-	 * @var Tx_AdGoogleMaps_Api_LatLngArray
-	 * @javaScriptHelper getFunction = __toString
+	 * @var Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray
+	 * @jsonClassEncoder useGetterMethod = getPrint
 	 */
 	protected $path;
 
 	/**
 	 * @var boolean
-	 * @javaScriptHelper dontSetIfValueIs = TRUE
+	 * @jsonClassEncoder ignorePropertyIfValueIs = TRUE
 	 */
 	protected $clickable;
 
 	/**
 	 * @var boolean
-	 * @javaScriptHelper dontSetIfValueIs = FALSE
+	 * @jsonClassEncoder ignorePropertyIfValueIs = FALSE
 	 */
 	protected $geodesic;
 
 	/**
 	 * @var integer
-	 * @javaScriptHelper dontSetIfValueIs = 0
+	 * @jsonClassEncoder ignorePropertyIfValueIs = 0
 	 */
 	protected $zindex;
 
 	/**
 	 * @var string
-	 * @javaScriptHelper dontSetIfValueIs = ''
+	 * @jsonClassEncoder ignorePropertyIfValueIs = ''
 	 */
 	protected $strokeColor;
 
 	/**
 	 * @var float
-	 * @javaScriptHelper dontSetIfValueIs = 0
+	 * @jsonClassEncoder ignorePropertyIfValueIs = 0
 	 */
 	protected $strokeOpacity;
 
 	/**
 	 * @var integer
-	 * @javaScriptHelper dontSetIfValueIs = 0
+	 * @jsonClassEncoder ignorePropertyIfValueIs = 0
 	 */
 	protected $strokeWeight;
 
 	/**
 	 * Sets this map.
 	 *
-	 * @param Tx_AdGoogleMaps_Api_Map $map
+	 * @param Tx_AdGoogleMaps_MapBuilder_Api_Map $map
 	 * @return Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline
 	 */
 	public function setMap($map) {
@@ -96,10 +96,10 @@ class Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline extends Tx_AdGoogleMaps_Api_L
 	/**
 	 * Sets this path.
 	 *
-	 * @param Tx_AdGoogleMaps_Api_LatLngArray $path
+	 * @param Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray $path
 	 * @return Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline
 	 */
-	public function setPath(Tx_AdGoogleMaps_Api_LatLngArray $path) {
+	public function setPath(Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray $path) {
 		$this->path = $path;
 		return $this;
 	}
@@ -107,10 +107,10 @@ class Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline extends Tx_AdGoogleMaps_Api_L
 	/**
 	 * Adds a point to the path.
 	 *
-	 * @param Tx_AdGoogleMaps_Api_LatLng $point
+	 * @param Tx_AdGoogleMaps_MapBuilder_Api_LatLng $point
 	 * @return Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline
 	 */
-	public function addPoint(Tx_AdGoogleMaps_Api_LatLng $point) {
+	public function addPoint(Tx_AdGoogleMaps_MapBuilder_Api_LatLng $point) {
 		$this->path->addLatLng($point);
 		return $this;
 	}
@@ -118,7 +118,7 @@ class Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline extends Tx_AdGoogleMaps_Api_L
 	/**
 	 * Returns this path.
 	 *
-	 * @return Tx_AdGoogleMaps_Api_LatLngArray
+	 * @return Tx_AdGoogleMaps_MapBuilder_Api_LatLngArray
 	 */
 	public function getPath() {
 		return $this->path;

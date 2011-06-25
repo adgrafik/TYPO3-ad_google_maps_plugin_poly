@@ -232,12 +232,12 @@ t3lib_extMgm::addTCAcolumns('tx_adgooglemaps_domain_model_layer', $tempColumns, 
 t3lib_extMgm::addLLrefForTCAdescr('tx_adgooglemaps_domain_model_layer', 'EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca_csh_layer.xml');
 
 // Add layer type icon.
-$TCA['tx_adgooglemaps_domain_model_layer']['ctrl']['typeicons']['Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/TCA/IconPolyline.gif';
-$TCA['tx_adgooglemaps_domain_model_layer']['ctrl']['typeicons']['Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/TCA/IconPolygon.gif';
+$TCA['tx_adgooglemaps_domain_model_layer']['ctrl']['typeicons']['Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/TCA/IconPolyline.gif';
+$TCA['tx_adgooglemaps_domain_model_layer']['ctrl']['typeicons']['Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/TCA/IconPolygon.gif';
 
 // Append record type.
-$TCA['tx_adgooglemaps_domain_model_layer']['columns']['type']['config']['items'][] = array('LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.type.polyline', 'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline', 'EXT:ad_google_maps_plugin_poly/Resources/Public/Icons/TCA/IconPolyline.gif');
-$TCA['tx_adgooglemaps_domain_model_layer']['columns']['type']['config']['items'][] = array('LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.type.polygon', 'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon', 'EXT:ad_google_maps_plugin_poly/Resources/Public/Icons/TCA/IconPolygon.gif');
+$TCA['tx_adgooglemaps_domain_model_layer']['columns']['type']['config']['items'][] = array('LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.type.polyline', 'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline', 'EXT:ad_google_maps_plugin_poly/Resources/Public/Icons/TCA/IconPolyline.gif');
+$TCA['tx_adgooglemaps_domain_model_layer']['columns']['type']['config']['items'][] = array('LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.type.polygon', 'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon', 'EXT:ad_google_maps_plugin_poly/Resources/Public/Icons/TCA/IconPolygon.gif');
 
 // Set palettes.
 $TCA['tx_adgooglemaps_domain_model_layer']['palettes']['pluginPolyStroke'] = array('canNotCollapse' => true, 'showitem' => 'tx_adgooglemapspluginpoly_stroke_color, tx_adgooglemapspluginpoly_stroke_opacity, tx_adgooglemapspluginpoly_stroke_weight');
@@ -246,15 +246,15 @@ $TCA['tx_adgooglemaps_domain_model_layer']['palettes']['pluginPolyProperties'] =
 $TCA['tx_adgooglemaps_domain_model_layer']['palettes']['pluginPolyInfoWindowPlacement'] = array('showitem' => 'tx_adgooglemapspluginpoly_info_window_placing_type, tx_adgooglemapspluginpoly_info_window_position');
 
 // Set types.
-$TCA['tx_adgooglemaps_domain_model_layer']['types']['Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon']['showitem'] = 
-	$TCA['tx_adgooglemaps_domain_model_layer']['types']['Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline']['showitem'] = 
-		$TCA['tx_adgooglemaps_domain_model_layer']['types']['Tx_AdGoogleMaps_MapBuilder_Layer_Marker']['showitem'];
+$TCA['tx_adgooglemaps_domain_model_layer']['types']['Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon']['showitem'] = 
+	$TCA['tx_adgooglemaps_domain_model_layer']['types']['Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline']['showitem'] = 
+		$TCA['tx_adgooglemaps_domain_model_layer']['types']['Tx_AdGoogleMaps_MapManager_Layer_Marker']['showitem'];
 
 // Add fields for polylines and polygons.
 t3lib_extMgm::addToAllTCAtypes(
 	'tx_adgooglemaps_domain_model_layer',
 	'tx_adgooglemapspluginpoly_add_markers',
-	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
+	'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon',
 	'before:marker_title'
 );
 
@@ -263,21 +263,21 @@ t3lib_extMgm::addToAllTCAtypes(
 	'--div--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.sheetAppearance, 
 		--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyStroke;pluginPolyStroke,
 		--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.polyProperties;pluginPolyProperties', 
-	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
+	'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon',
 	'after:categories'
 );
 
 t3lib_extMgm::addToAllTCAtypes(
 	'tx_adgooglemaps_domain_model_layer',
 	'--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.infoWindowPlacement;pluginPolyInfoWindowPlacement',
-	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
+	'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon',
 	'after:--palette--;;infoWindowArrangement'
 );
 
 t3lib_extMgm::addToAllTCAtypes(
 	'tx_adgooglemaps_domain_model_layer',
 	'tx_adgooglemapspluginpoly_list_type',
-	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
+	'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline,Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon',
 	'before:list_title'
 );
 
@@ -285,7 +285,7 @@ t3lib_extMgm::addToAllTCAtypes(
 t3lib_extMgm::addToAllTCAtypes(
 	'tx_adgooglemaps_domain_model_layer',
 	'--palette--;LLL:EXT:ad_google_maps_plugin_poly/Resources/Private/Language/locallang_tca.xml:tx_adgooglemaps_domain_model_layer.paletteTitle.pluginPolyFill;pluginPolyFill',
-	'Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon',
+	'Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polygon',
 	'after:--palette--;;pluginPolyStroke'
 );
 
