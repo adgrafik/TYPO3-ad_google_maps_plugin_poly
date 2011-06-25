@@ -80,7 +80,7 @@ plugin.tx_adgooglemaps {
 				# Use classname where they loaded as unique configuration key.
 				Tx_AdGoogleMapsPluginPoly_MapManager_Layer_Polyline {
 					includeJS {
-						Tx_AdGoogleMapsPluginPoly_Plugin_Polyline = EXT:ad_google_maps_plugin_poly/Resources/Public/JavaScript/Plugin/Tx_AdGoogleMapsPluginPoly_Plugin.js
+						Tx_AdGoogleMapsPluginPoly_MapBuilder_Polyline = EXT:ad_google_maps_plugin_poly/Resources/Public/JavaScript/MapBuilder/Tx_AdGoogleMapsPluginPoly_MapBuilder_Poly.js
 					}
 				}
 
