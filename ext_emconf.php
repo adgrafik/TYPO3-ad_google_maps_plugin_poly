@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "ad_google_maps_plugin_poly".
 #
-# Auto generated 01-07-2011 14:53
+# Auto generated 01-07-2011 14:55
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Extends the extension ad: Google Maps (ad_google_maps) with a polyline and polygon layer.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '1.0.0',
+	'version' => '1.0.1',
 	'dependencies' => 'extbase,fluid,ad_google_maps',
 	'conflicts' => '',
 	'priority' => '',
