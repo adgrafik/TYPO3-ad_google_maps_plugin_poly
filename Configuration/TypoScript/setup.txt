@@ -1,0 +1,121 @@
+###
+# This is the default TS-setup
+##
+
+# Use config.tx_extbase to load before ad_google_maps settings.
+config.tx_extbase {
+	persistence {
+		classes {
+			# Using mixed-ins hack from Franz Koch to make map table extendable.
+			# @see http://lists.typo3.org/pipermail/typo3-project-typo3v4mvc/2010-September/006497.html
+			Tx_AdGoogleMaps_Domain_Model_Map {
+				mapping.recordType = 0
+				subclasses.0 = Tx_AdGoogleMapsPluginPoly_Domain_Model_Map
+			}
+
+			Tx_AdGoogleMapsPluginPoly_Domain_Model_Map {
+				mapping {
+					tableName = tx_adgooglemaps_domain_model_map
+					recordType = 0
+					columns {
+						tx_adgooglemapspluginpoly_info_window_placing_type.mapOnProperty = pluginPolyInfoWindowPlacingType
+						tx_adgooglemapspluginpoly_info_window_position.mapOnProperty = pluginPolyInfoWindowPosition
+					}
+				}
+			}
+
+			# Set type extensions.
+			Tx_AdGoogleMaps_Domain_Model_Layer {
+				subclasses {
+					Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline = Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline
+					Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon = Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon
+				}
+			}
+
+			Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline {
+				mapping {
+					tableName = tx_adgooglemaps_domain_model_layer
+					recordType = Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline
+					columns {
+						tx_adgooglemapspluginpoly_add_markers.mapOnProperty = pluginPolyAddMarkers
+						tx_adgooglemapspluginpoly_clickable.mapOnProperty = pluginPolyClickable
+						tx_adgooglemapspluginpoly_geodesic.mapOnProperty = pluginPolyGeodesic
+						tx_adgooglemapspluginpoly_zindex.mapOnProperty = pluginPolyZindex
+						tx_adgooglemapspluginpoly_stroke_color.mapOnProperty = pluginPolyStrokeColor
+						tx_adgooglemapspluginpoly_stroke_opacity.mapOnProperty = pluginPolyStrokeOpacity
+						tx_adgooglemapspluginpoly_stroke_weight.mapOnProperty = pluginPolyStrokeWeight
+						tx_adgooglemapspluginpoly_info_window_placing_type.mapOnProperty = pluginPolyInfoWindowPlacingType
+						tx_adgooglemapspluginpoly_info_window_position.mapOnProperty = pluginPolyInfoWindowPosition
+						tx_adgooglemapspluginpoly_list_type.mapOnProperty = pluginPolyListType
+					}
+				}
+			}
+
+			Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline
+			Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polygon {
+				mapping {
+					tableName = tx_adgooglemaps_domain_model_layer
+					recordType = Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon
+					columns {
+						tx_adgooglemapspluginpoly_fill_color.mapOnProperty = pluginPolyFillColor
+						tx_adgooglemapspluginpoly_fill_opacity.mapOnProperty = pluginPolyFillOpacity
+					}
+				}
+			}
+		}
+	}
+}
+
+###
+# Set plugin.tx_adgooglemaps settings.
+#
+plugin.tx_adgooglemaps {
+	settings {
+		plugin {
+
+			# Use includeCSS, cssInline, includeJSlibs, includeJSFooterlibs, includeJS, includeJSFooter, jsInline or jsFooterInline.
+			# This extends the page configuration. Use unique keys!
+			includeFrontEndResources {
+
+				# Use classname where they loaded as unique configuration key.
+				Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline {
+					includeJS {
+						Tx_AdGoogleMapsPluginPoly_Plugin_Polyline = EXT:ad_google_maps_plugin_poly/Resources/Public/JavaScript/Plugin/Tx_AdGoogleMapsPluginPoly_Plugin.js
+					}
+				}
+
+				Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline
+			}
+		}
+
+		mapDrawer {
+			tables {
+				tx_adgooglemaps_domain_model_layer {
+					recordTypes {
+						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline < .Tx_AdGoogleMaps_MapBuilder_Layer_Marker
+						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline {
+							javaScriptFiles.1 = EXT:ad_google_maps/Resources/Public/JavaScript/MapDrawer/Tx_AdGoogleMaps_MapDrawer_Layer_Marker.js
+							javaScriptFiles.2 = EXT:ad_google_maps_plugin_poly/Resources/Public/JavaScript/MapDrawer/Tx_AdGoogleMapsPluginPoly_MapDrawer_Layer_Poly.js
+							className = Tx_AdGoogleMapsPluginPoly_MapDrawer_Layer_Polyline
+							columnsMapping {
+								geodesic = tx_adgooglemapspluginpoly_geodesic
+								strokeColor = tx_adgooglemapspluginpoly_stroke_color
+								strokeWeight = tx_adgooglemapspluginpoly_stroke_weight
+								strokeOpacity = tx_adgooglemapspluginpoly_stroke_opacity
+							}
+						}
+
+						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon < .Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline
+						Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon {
+							className = Tx_AdGoogleMapsPluginPoly_MapDrawer_Layer_Polygon
+							columnsMapping {
+								fillColor = tx_adgooglemapspluginpoly_fill_color
+								fillOpacity = tx_adgooglemapspluginpoly_fill_opacity
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
