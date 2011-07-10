@@ -31,10 +31,12 @@
 class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline {
 
 	/**
-	 * Constructor.
+	 * Initialize this objectManager.
+	 *
+	 * @return void
 	 */
-	public function __construct() {
-		parent::__construct();
+	public function initializeObject() {
+		parent::initializeObject();
 	}
 
 	/**
@@ -76,13 +78,13 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMaps
 		$itemData = $this->getContentByObjectNumberConf($this->coordinatesProvider->getData(), $this->infoWindowObjectNumberConf, $indexInfoWindow, NULL, FALSE, array());
 
 		// Set options.
-		$this->layerOptions['paths'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
+		$this->layerOptions['paths'] = $this->objectManager->create('Tx_AdGoogleMaps_Api_Base_LatLngArray', $this->coordinatesProvider->getCoordinates());
 
 		// Create shape.
-		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Api_Layer_Polygon', $this->layerOptions);
+		$layer = $this->objectManager->create('Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polygon', $this->layerOptions);
 
 		// Create option object.
-		$layerOptionsObject = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polygon');
+		$layerOptionsObject = $this->objectManager->create('Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polygon');
 		$layerOptionsObject->setUid($layerUid);
 		$layerOptionsObject->setDrawFunctionName('drawPolygon');
 		$layerOptionsObject->setOptions($layer);
@@ -117,7 +119,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polygon extends Tx_AdGoogleMaps
 
 		// Create list item.
 		if (($this->listType & Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline::LIST_TYPE_SHAPE) !== 0) {
-			$item = t3lib_div::makeInstance('Tx_AdGoogleMaps_Domain_Model_Item');
+			$item = $this->objectManager->create('Tx_AdGoogleMaps_Domain_Model_Item');
 			$item->setTitle($listTitle);
 			$item->setIcon($listIconOptions['url']);
 			$item->setIconWidth($listIconOptions['width']);

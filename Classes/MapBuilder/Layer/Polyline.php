@@ -81,10 +81,12 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 	protected $listType;
 
 	/**
-	 * Constructor.
+	 * Initialize this objectManager.
+	 *
+	 * @return void
 	 */
-	public function __construct() {
-		parent::__construct();
+	public function initializeObject() {
+		parent::initializeObject();
 		$this->useCoordinatesProvider = TRUE;
 		$this->addCountCoordinates = TRUE;
 	}
@@ -131,14 +133,14 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 
 		// Build markers.
 		if ($this->addMarkers === TRUE) {
-			$this->markers = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Layer_Marker');
-			$this->markers->injectSettings($this->settings);
-			$this->markers->injectMapBuilder($this->mapBuilder);
-			$this->markers->injectGoogleMapsPlugin($this->googleMapsPlugin);
-			$this->markers->injectMap($this->map);
-			$this->markers->injectCategory($this->category);
-			$this->markers->injectLayer($this->layer);
-			$this->markers->injectCoordinatesProvider($this->coordinatesProvider);
+			$this->markers = $this->objectManager->create('Tx_AdGoogleMaps_MapBuilder_Layer_Marker');
+			$this->markers->setSettings($this->settings);
+			$this->markers->setMapBuilder($this->mapBuilder);
+			$this->markers->setGoogleMapsPlugin($this->googleMapsPlugin);
+			$this->markers->setMap($this->map);
+			$this->markers->setCategory($this->category);
+			$this->markers->setLayer($this->layer);
+			$this->markers->setCoordinatesProvider($this->coordinatesProvider);
 			if ($this->infoWindowPlacingType === Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline::INFO_WINDOW_PLACING_TYPE_SHAPE) {
 				$this->markers->setPreventAddInfoWindows(TRUE);
 			}
@@ -163,14 +165,14 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 		}
 
 		// Build info window.
-		$this->infoWindows = t3lib_div::makeInstance('Tx_AdGoogleMaps_MapBuilder_Layer_InfoWindow');
-		$this->infoWindows->injectSettings($this->settings);
-		$this->infoWindows->injectMapBuilder($this->mapBuilder);
-		$this->infoWindows->injectGoogleMapsPlugin($this->googleMapsPlugin);
-		$this->infoWindows->injectMap($this->map);
-		$this->infoWindows->injectCategory($this->category);
-		$this->infoWindows->injectLayer($this->layer);
-		$this->infoWindows->injectCoordinatesProvider($this->coordinatesProvider);
+		$this->infoWindows = $this->objectManager->create('Tx_AdGoogleMaps_MapBuilder_Layer_InfoWindow');
+		$this->infoWindows->setSettings($this->settings);
+		$this->infoWindows->setMapBuilder($this->mapBuilder);
+		$this->infoWindows->setGoogleMapsPlugin($this->googleMapsPlugin);
+		$this->infoWindows->setMap($this->map);
+		$this->infoWindows->setCategory($this->category);
+		$this->infoWindows->setLayer($this->layer);
+		$this->infoWindows->setCoordinatesProvider($this->coordinatesProvider);
 		$this->infoWindows->setPreventAddListItems(TRUE);
 		// If placing type of the info windows is set to shape or both this means, 
 		// that there should be an info window on every item. In this case it must be one more.
@@ -205,13 +207,13 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 		$itemData = $this->getContentByObjectNumberConf($this->coordinatesProvider->getData(), $this->infoWindowObjectNumberConf, $indexInfoWindow, NULL, FALSE, array());
 
 		// Set options.
-		$this->layerOptions['path'] = t3lib_div::makeInstance('Tx_AdGoogleMaps_Api_LatLngArray', $this->coordinatesProvider->getCoordinates());
+		$this->layerOptions['path'] = $this->objectManager->create('Tx_AdGoogleMaps_Api_Base_LatLngArray', $this->coordinatesProvider->getCoordinates());
 
 		// Create shape.
-		$layer = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Api_Layer_Polyline', $this->layerOptions);
+		$layer = $this->objectManager->create('Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polyline', $this->layerOptions);
 
 		// Create option object.
-		$layerOptionsObject = t3lib_div::makeInstance('Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polyline');
+		$layerOptionsObject = $this->objectManager->create('Tx_AdGoogleMapsPluginPoly_Plugin_Options_Layer_Polyline');
 		$layerOptionsObject->setUid($layerUid);
 		$layerOptionsObject->setDrawFunctionName('drawPolyline');
 		$layerOptionsObject->setOptions($layer);
@@ -248,7 +250,7 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 		if (($this->listType & Tx_AdGoogleMapsPluginPoly_Domain_Model_Layer_Polyline::LIST_TYPE_SHAPE) !== 0) {
 			$pluginMapObjectIdentifier = $this->googleMapsPlugin->getPluginMapObjectIdentifier();
 			$infoWindowUid = ($infoWindowOptionsObject !== NULL ? $infoWindowOptionsObject->getUid() : NULL);
-			$item = t3lib_div::makeInstance('Tx_AdGoogleMaps_Domain_Model_Item');
+			$item = $this->objectManager->create('Tx_AdGoogleMaps_Domain_Model_Item');
 			$item->setTitle($listTitle);
 			$item->setIcon($listIconOptions['url']);
 			$item->setIconWidth($listIconOptions['width']);

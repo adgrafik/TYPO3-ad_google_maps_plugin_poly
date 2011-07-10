@@ -3,3 +3,8 @@
 1.0.0	First release. Moved from ad_google_maps
 
 1.0.1	[TASK] Changed getBoundsOfLatLngArray to getBoundsByLatLngArray and getCenterOfLatLngArray to getCenterByLatLngArray.
+
+1.1.0	[TASK] Changed many t3lib_div::makeInstance to the extbase $this->objectManager->create/get.
+		[TASK] Changed function Tx_AdGoogleMaps_Utility_FrontEnd::jsonClassEncoder to extendable object Tx_AdGoogleMaps_JsonClassEncoder_JsonEncoder.
+		[TASK] Changed naming of Classes\Api\Map to Classes\Api\Map\Map.
+		[TASK] Changed naming of Classes\Api\Layer\* to Classes\Api\Overlay\*.
