@@ -41,7 +41,7 @@ class Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polygon extends Tx_AdGoogleMaps_Api_
 	protected $map;
 
 	/**
-	 * @var Tx_AdGoogleMaps_Api_Base_LatLngArray
+	 * @var Tx_AdGoogleMaps_Api_MVC_MVCArray
 	 * @jsonClassEncoder useGetterMethod = getPrint
 	 */
 	protected $paths;
@@ -117,10 +117,10 @@ class Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polygon extends Tx_AdGoogleMaps_Api_
 	/**
 	 * Sets this paths.
 	 *
-	 * @param Tx_AdGoogleMaps_Api_Base_LatLngArray $paths
+	 * @param Tx_AdGoogleMaps_Api_MVC_MVCArray $paths
 	 * @return Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polygon
 	 */
-	public function setPaths(Tx_AdGoogleMaps_Api_Base_LatLngArray $paths) {
+	public function setPaths(Tx_AdGoogleMaps_Api_MVC_MVCArray $paths) {
 		$this->paths = $paths;
 		return $this;
 	}
@@ -132,14 +132,14 @@ class Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polygon extends Tx_AdGoogleMaps_Api_
 	 * @return Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polygon
 	 */
 	public function addPoint(Tx_AdGoogleMaps_Api_Base_LatLng $point) {
-		$this->paths->addLatLng($point);
+		$this->paths->attach($point);
 		return $this;
 	}
 
 	/**
 	 * Returns this paths.
 	 *
-	 * @return Tx_AdGoogleMaps_Api_Base_LatLngArray
+	 * @return Tx_AdGoogleMaps_Api_MVC_MVCArray
 	 */
 	public function getPaths() {
 		return $this->paths;

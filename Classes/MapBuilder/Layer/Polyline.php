@@ -207,7 +207,11 @@ class Tx_AdGoogleMapsPluginPoly_MapBuilder_Layer_Polyline extends Tx_AdGoogleMap
 		$itemData = $this->getContentByObjectNumberConf($this->coordinatesProvider->getData(), $this->infoWindowObjectNumberConf, $indexInfoWindow, NULL, FALSE, array());
 
 		// Set options.
-		$this->layerOptions['path'] = $this->objectManager->create('Tx_AdGoogleMaps_Api_Base_LatLngArray', $this->coordinatesProvider->getCoordinates());
+		$this->layerOptions['path'] = $this->objectManager->create('Tx_AdGoogleMaps_Api_MVC_MVCArray');
+		foreach ($this->coordinatesProvider->getCoordinates() as $coordinate) {
+			$coordinate = $this->objectManager->create('Tx_AdGoogleMaps_Api_Base_LatLng', $coordinate);
+			$this->layerOptions['path']->attach($coordinate);
+		}
 
 		// Create shape.
 		$layer = $this->objectManager->create('Tx_AdGoogleMapsPluginPoly_Api_Overlay_Polyline', $this->layerOptions);
